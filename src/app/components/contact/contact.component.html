@@ -1,0 +1,11 @@
+<p>contact works!</p>
+
+<button (click)="getUser()">Get User</button>
+
+
+<div *ngFor="let item of userList">
+    <div>Name: {{item.name}}</div>
+    <div>
+        Id: {{item.id}}
+    </div>
+</div>
