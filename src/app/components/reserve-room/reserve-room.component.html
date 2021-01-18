@@ -1,0 +1,315 @@
+<div class="breadcrumb-section pt-0"
+     [ngStyle]="{'background-image': 'url(http://roomstoinn.com:9090/downloadFile/' + this.selectedPropertyDetails.propertyId + '/' + this.selectedPropertyDetails.masterImage + ')'}">
+  <img style="width: 100%" src="" class="bg-img blur-up lazyload" alt="">
+  <div class="breadcrumb-content">
+    <div style="display: inline-block">
+        <h2>review</h2>
+        <nav aria-label="breadcrumb" class="theme-breadcrumb">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a>Home</a></li>
+            <li class="breadcrumb-item"><a>hotels</a></li>
+            <li class="breadcrumb-item active"><a>review</a></li>
+          </ul>
+        </nav>
+    </div>
+  </div>
+</div>
+
+
+<section class="section-b-space bg-inner animated-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 guest-detail">
+        <div class="row col-sm-6">
+          <h3>Guest Information</h3>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field class="align"appearance="outline">
+              <mat-label>First Name</mat-label>
+              <input matInput placeholder="FirstName">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="align" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input matInput placeholder="outline">
+            </mat-form-field>
+          </div>
+          <div class="row p-0 m-0">
+            <div class="col-sm-12">
+              <mat-form-field  appearance="outline">
+                <mat-label>Enter Your Email</mat-label>
+                <input matInput placeholder="Email">
+                <mat-hint align="start"><strong>Booking confirmation will be sent to this email ID.</strong> </mat-hint>
+              </mat-form-field>
+            </div>
+
+
+            <div class="row p-0 m-0">
+              <div class="col-sm-12">
+                <mat-form-field  appearance="outline">
+                  <mat-label>Contact Number</mat-label>
+                  <input matInput placeholder="Contact Number" />
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row p-0 m-0">
+              <div class="col-sm-12">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Special Request</mat-label>
+                  <textarea matInput></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+
+
+            <div class="row p-0 m-0">
+              <div class="col-sm-8">
+                <mat-hint align="start"><strong>Have A Coupon Code?</strong> </mat-hint>
+                <mat-form-field style="width:70%;" appearance="outline">
+                <mat-label>Promo Code</mat-label>
+                <input matInput />
+                </mat-form-field>
+              </div>
+
+              <div class="col-sm-4">
+                <button mat-raised-button class="mt-4" style="width: 100%; height: 45px;">Apply</button>
+              </div>
+            </div>
+
+            <div class="row p-0 m-0">
+              <div class="col-sm-8"></div>
+              <div class="col-sm-4">
+                <button mat-raised-button class="mt-4" style="width: 100%; height: 45px;" (click)="bookRoom()">Pay Now</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5 summery-box" style="margin-left: 12px">
+
+          <div class="row col-sm-12">
+            <h2>booking summary</h2>
+          </div>
+
+          <div class="hotel-section">
+            <div class="hotel-img col-sm-4">
+              <img src="assets/images/hotel/room/1.jpg" style="width: 100%" class="blur-up lazyload" alt="">
+            </div>
+            <div class="hotel-detail col-sm-8">
+              <h6>{{selectedPropertyDetails.propertyName}}</h6>
+              <p>{{selectedPropertyDetails.address}}, {{selectedPropertyDetails.state}}, {{selectedPropertyDetails.country}}</p>
+            </div>
+          </div>
+
+          <div class="row summery-section">
+            <div class="box">
+              <div class="left " >
+                <div class="up ">
+                  <h6>check in</h6>
+                  <h5>{{selectedPropertyDetails.checkInDate}}</h5>
+                </div>
+              </div>
+              <div class="right">
+                <div class="up ">
+                  <h6>check out</h6>
+                  <h5>{{selectedPropertyDetails.checkOutDate}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="summery-section">
+            <h5 class="mb-0 ">{{selectedPropertyDetails.roomGuestNo}} guest, {{diffCheckInDate}} months</h5>
+            <a class="edit-cls" >edit</a>
+          </div>
+
+          <div class="summery-section">
+            <div class="payment-details">
+              <h5>payment details</h5>
+              <table>
+                <tbody>
+                <tr>
+                  <td>base price</td>
+                  <td>${{selectedPropertyDetails.roomRate}}</td>
+                </tr>
+                <tr>
+                  <td>promo discount</td>
+                  <td>- $0</td>
+                </tr>
+                <tr>
+                  <td>tax & service fees</td>
+                  <td>+ $0</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="summery-section">
+            <div class="payment-details">
+              <table>
+                <tbody>
+                <tr>
+                  <td>payable amount</td>
+                  <td class="amount">${{selectedPropertyDetails.roomRate}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+        </div>
+     </div>
+</section>
+
+
+
+
+<!--<div class="summery-section">-->
+<!--  <div class="box">-->
+<!--    <div class="left">-->
+<!--      <div class="up">-->
+<!--        <h6>check in</h6>-->
+<!--        <h5>tue, 18 sep 2019</h5>-->
+<!--      </div>-->
+<!--      <div class="down">-->
+<!--        <h6>check in time</h6>-->
+<!--        <h5>2.00 pm</h5>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="right">-->
+<!--      <div class="up">-->
+<!--        <h6>check out</h6>-->
+<!--        <h5>fri, 21 sep 2019</h5>-->
+<!--      </div>-->
+<!--      <div class="down">-->
+<!--        <h6>check out time</h6>-->
+<!--        <h5>12.00 pm</h5>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="summery-section">-->
+<!--  <h5 class="mb-0">2 guest, 1 deluxe room, 3 night</h5>-->
+<!--  <a href="hotel-single-1.html" class="edit-cls">edit</a>-->
+<!--</div>-->
+<!--<div class="summery-section">-->
+<!--  <div class="payment-details">-->
+<!--    <h5>payment details</h5>-->
+<!--    <table>-->
+<!--      <tbody>-->
+<!--      <tr>-->
+<!--        <td>base price</td>-->
+<!--        <td>$2510</td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>promo discount</td>-->
+<!--        <td>- $250</td>-->
+<!--      </tr>-->
+<!--      <tr>-->
+<!--        <td>tax & service fees</td>-->
+<!--        <td>+ $150</td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </table>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="summery-section">-->
+<!--  <div class="payment-details">-->
+<!--    <table>-->
+<!--      <tbody>-->
+<!--      <tr>-->
+<!--        <td>payable amount</td>-->
+<!--        <td class="amount">$2410</td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </table>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+
+<!--<section class="hotel-single-section pt-0">-->
+<!--  <img style="width: -webkit-fill-available" src="http://roomstoinn.com:9090/downloadFile/{{this.selectedPropertyDetails.propertyId}}/{{this.selectedPropertyDetails.masterImage}}" class="bg-img bg-bottom blur-up lazyload" alt="">-->
+<!--  <div class="breadcrumb-content">-->
+<!--    <div>-->
+<!--      <h2>review</h2>-->
+<!--      <nav aria-label="breadcrumb" class="theme-breadcrumb">-->
+<!--        <ol class="breadcrumb">-->
+<!--          <li class="breadcrumb-item"><a >Home</a></li>-->
+<!--          <li class="breadcrumb-item">hotels</li>-->
+<!--          <li class="breadcrumb-item active">review</li>-->
+<!--        </ol>-->
+<!--      </nav>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="row" style="margin:0;">-->
+<!--    <div class class="col-md-9">-->
+<!--      <div class="login-panel panel panel-default">-->
+<!--        <div class class="col-md-9"  >-->
+<!--          <div class="text-align" style="margin-top:3px">-->
+<!--            <h3>{{selectedPropertyDetails.typeOfTenant}}</h3>-->
+<!--            <h5>${{selectedPropertyDetails.roomRate}} | {{selectedPropertyDetails.roomSize}} Sq Ft</h5>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <hr>-->
+<!--        <div class="panel-body">-->
+<!--          <section class="breadcrumb-section pt-0">-->
+
+<!--          </section>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--&lt;!&ndash;    <div class="col-md-3" style="border-right:1px solid #efefef;">&ndash;&gt;-->
+<!--&lt;!&ndash;      <aside class="contactLead" id="contactLead" >&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="lead-form-container">&ndash;&gt;-->
+<!--&lt;!&ndash;          <div id="inlineDlfWrapper" class="inlineDlfWrapper">&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="contactLeadWrapper " id="contactLeadForm">&ndash;&gt;-->
+<!--&lt;!&ndash;              <input id="DlfConfiguration" type="hidden" value="{&quot;DynamicLeadFormId&quot;:0,&quot;DynamicLeadFormType&quot;:0,&quot;ListingId&quot;:0,&quot;HasContactVia&quot;:false,&quot;HasMaxRent&quot;:false,&quot;HasBedsBaths&quot;:false,&quot;HasReasonForMoving&quot;:false,&quot;IsPhoneRequired&quot;:false,&quot;IsContactViaRequired&quot;:false,&quot;IsMaxRentRequired&quot;:false,&quot;IsBedsRequired&quot;:false,&quot;IsReasonForMovingRequired&quot;:false,&quot;HasOnlineScheduling&quot;:false,&quot;OnlineSchedulingProviderType&quot;:0}">&ndash;&gt;-->
+<!--&lt;!&ndash;              <header class="property-title-header" style="height:30%;font-size:18px;position:relative; background-color: #ff4081">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div id="ctn" class="contactPhone">Contact Property</div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <mat-icon>phone</mat-icon>630-517-9382&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              </header>&ndash;&gt;-->
+<!--&lt;!&ndash;              <header class="property-title-headers">&ndash;&gt;-->
+<!--&lt;!&ndash;                <h5>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <span id="ctn" class="contactPhone" style="color: white; font-weight: 500;">Top 15</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </h5>&ndash;&gt;-->
+<!--&lt;!&ndash;              </header>&ndash;&gt;-->
+<!--&lt;!&ndash;              <div id="contactForm" class="contactForm">&ndash;&gt;-->
+<!--&lt;!&ndash;                <h5>Features</h5><br>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Air Condition</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Cable ready</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Heating</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <hr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <h5>Kitchen</h5><br>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Dishwasher</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Disposal</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Range</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <hr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <h5>Living Space</h5><br>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Carpet</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Dining Room</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <p>Sunroom</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                <hr>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="linkWrapper">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <a href="http://www.tgmdanada.com/" title="View Property Website" rel="nofollow" class="js-externalUrl" target="_blank">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="worldWideWebIcon"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span>View Property Website</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;              </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;          </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </aside>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+<!--</section>-->

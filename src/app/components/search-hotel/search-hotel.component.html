@@ -1,0 +1,193 @@
+<!-- home section start -->
+<section class="home_section hotel_layout slide-1 p-0">
+  <div>
+    <div class="home">
+      <img src="assets/images/hotel-bg.jpg" class="img-fluid blur-up lazyload bg-img" alt="">
+      <div class="home-content">
+        <div>
+          <h1>RoomsToInn</h1>
+          <h5 style="margin-top: 70px;">RoomsToInn hotel</h5>
+          <h2>welcome</h2>
+          <a href="#" class="btn btn-solid ">book now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  <div>-->
+  <!--    <div class="home">-->
+  <!--      <img src="../assets/images/hotel-bg.jpg" class="img-fluid blur-up lazyload bg-img" alt="">-->
+  <!--      <div class="home-content">-->
+  <!--        <div>-->
+  <!--          <h1>rica</h1>-->
+  <!--          <h5>rica hotel</h5>-->
+  <!--          <h2>welcome</h2>-->
+  <!--          <a href="#" class="btn btn-solid ">book now</a>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--  <div>-->
+  <!--    <div class="home">-->
+  <!--      <img src="../assets/images/hotel-bg.jpg" class="img-fluid blur-up lazyload bg-img" alt="">-->
+  <!--      <div class="home-content">-->
+  <!--        <div>-->
+  <!--          <h1>rica</h1>-->
+  <!--          <h5>rica hotel</h5>-->
+  <!--          <h2>welcome</h2>-->
+  <!--          <a href="#" class="btn btn-solid ">book now</a>-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </div>-->
+  <!--  </div>-->
+</section>
+<!-- home section end -->
+
+<div class="search-section" [formGroup]="searchForm">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10 offset-xl-1">
+        <div class="search-panel" id="searchBar">
+          <div class="search-section shadow">
+            <div class="search-box">
+              <div class="left-part">
+                <div class="search-body title-hotel">
+                  <h6>hotel</h6>
+                  <input type="text" name="text" placeholder="North Carolina" class="form-control ">
+                </div>
+                <div class="search-body">
+                  <h6>check in</h6>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <input matInput [matDatepicker]="picker" formControlName="checkInDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker">
+                      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="search-body">
+                  <h6>check out</h6>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <input matInput [matDatepicker]="picker1" formControlName="checkOutDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker1">
+                      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="search-body">
+                  <h6>Room Type</h6>
+                  <mat-form-field appearance="fill">
+                    <mat-select name="type" placeholder="Select" formControlName="typeOfTenant">
+                      <mat-option *ngFor="let type of ['private', 'shared']" [value]="type">
+                        {{type}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="search-body btn-search">
+                  <div class="right-part" (click)="onSearchHotel()">
+                    <a class="btn btn-solid color1">search</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="section-b-space special-section ratio2_3 animated-section">
+  <div class="animation-section">
+    <div class="cross po-1"></div>
+    <div class="cross po-2"></div>
+    <div class="cross po-3"></div>
+    <div class="round po-4"></div>
+    <div class="round po-5"></div>
+    <div class="round r-2 po-6"></div>
+    <div class="round r-2 po-7"></div>
+    <div class="round r-y po-8"></div>
+    <div class="round r-y po-9"></div>
+    <div class="square po-10"></div>
+    <div class="square po-11"></div>
+    <div class="square s-2 po-12"></div>
+  </div>
+  <div class="container">
+    <div class="title-3">
+      <span class="title-label">our</span>
+      <h2>special room<span>special</span></h2>
+    </div>
+    <div class="slide-3" style="display: inline-flex; flex-wrap: wrap;">
+      <div style="flex-basis: 30%; cursor: pointer" *ngFor="let item of searchHotelList; let i = index" >
+        <div *ngIf="i != 0; else elseBlock">
+          <div *ngIf="item.propertyId != searchHotelList[i - 1].propertyId">
+            <div class="special-box p-0" (click)="navigateToSearchProperty(item)">
+              <div class="special-img" style="padding-right: 10px;">
+                <a>
+                  <img src="http://roomstoinn.com:9090/downloadFile/{{item.propertyId}}/{{item.masterImage}}" class="img-fluid blur-up lazyload bg-img"
+                       alt="">
+                </a>
+                <div class="label">
+                  <i class="fas fa-percent"></i>
+                  <!--              <h3><del>{{$24}}</del> $20</h3>-->
+                  <h3>${{item.room[0].roomRate}}</h3>
+                </div>
+              </div>
+              <div class="special-content">
+                <a>
+                  <h3><strong>{{item.propertyName}}</strong></h3>
+                </a>
+                <p>
+                  <span style="color:red">{{item.room[0].roomSize}} Sq.Ft | {{item.room[0].typeOfTenant}}</span>
+                </p>
+                <div class="bottom-part">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ng-template #elseBlock>
+          <div class="special-box p-0" (click)="navigateToSearchProperty(searchHotelList)">
+            <div class="special-img" style="padding-right: 10px;">
+              <a>
+                <img src="http://roomstoinn.com:9090/downloadFile/{{item.propertyId}}/{{item.masterImage}}" class="img-fluid blur-up lazyload bg-img"
+                     alt="">
+              </a>
+              <div class="label">
+                <i class="fas fa-percent"></i>
+                <!--              <h3><del>{{$24}}</del> $20</h3>-->
+                <h3>${{item.room[0].roomRate}}</h3>
+              </div>
+            </div>
+            <div class="special-content">
+              <a>
+                <h3><strong>{{item.propertyName}}</strong></h3>
+              </a>
+              <p>
+                <span style="color:red">{{item.room[0].roomSize}} Sq.Ft | {{item.room[0].typeOfTenant}}</span>
+              </p>
+              <div class="bottom-part">
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</section>
+
+

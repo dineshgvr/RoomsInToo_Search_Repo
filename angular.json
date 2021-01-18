@@ -24,10 +24,23 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              ""
+              "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/slick.css",
+              "src/assets/css/slick-theme.css",
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/themify-icons.css",
+              "src/assets/css/color1.css",
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery-3.5.1.min.js",
+              "src/assets/js/tilt.jquery.js",
+              "node_modules/slick-carousel/slick/slick.min.js",
+              "src/assets/js/bootstrap.bundle.min.js",
+              "src/assets/js/lazysizes.min.js",
+              "src/assets/js/script.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -88,6 +101,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []

@@ -1,8 +1,3 @@
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 .header-right li a {
   display: block;
   color: white;
@@ -18,6 +13,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   cursor: pointer;
 }
 
-/*.ng-image-slider-container .main {*/
-/*  display: none !important;*/
-/*}*/

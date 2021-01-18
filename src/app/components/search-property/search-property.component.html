@@ -1,0 +1,142 @@
+<section class="hotel-single-section pt-0">
+  <img style="width: -webkit-fill-available" src="http://roomstoinn.com:9090/downloadFile/{{this.selectedHotelInfo[0].propertyId}}/{{this.selectedHotelInfo[0].masterImage}}" class="bg-img bg-bottom img-fluid blur-up lazyload" alt="">
+  <div class="hotel-title-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="hotel-name">
+            <div class="left-part">
+              <div class="top">
+                <h2>{{this.selectedHotelInfo[0].propertyName}}</h2>
+                <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+              <p>{{this.selectedHotelInfo[0].address}}, {{this.selectedHotelInfo[0].state}}, {{this.selectedHotelInfo[0].country}}</p>
+            </div>
+            <div class="right-part">
+<!--              <h2 class="price">${{this.selectedHotelInfo[0].room[0].roomRate}} <span>/ per night</span></h2>-->
+<!--              <a href="hotel-booking.html" class="btn btn-rounded btn-sm color1">book this now</a>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="image-slider-container">
+  <ng-image-slider #nav
+                   [images]="imageObject"
+                   [infinite]="false"
+                   [autoSlide]="1"
+                   [imageSize]="{width: '25%', height: 200}"
+                   slideImage="1"></ng-image-slider>
+</div>
+
+<section style="padding: 10px !important;" class="container">
+  <div>
+    <button mat-raised-button (click)="showPropertyDetail('All')"> All </button>
+    <button mat-raised-button (click)="showPropertyDetail('Private')"> Private </button>
+    <button mat-raised-button (click)="showPropertyDetail('Shared')"> Shared </button>
+  </div>
+
+  <div>
+    <table mat-table [dataSource]="filteredHotelData" class="mat-elevation-z8">
+      <ng-container matColumnDef="Type of Tenancy" width="33%">
+        <th mat-header-cell *matHeaderCellDef> <b> Type of Tenancy </b></th>
+        <td mat-cell *matCellDef="let element"> {{element.typeOfTenant}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Rent">
+        <th mat-header-cell *matHeaderCellDef> Rent </th>
+        <td mat-cell *matCellDef="let element"> {{element.roomRate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Sq.Ft">
+        <th mat-header-cell *matHeaderCellDef> Sq.Ft </th>
+        <td mat-cell *matCellDef="let element"> {{element.roomSize}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Availability">
+        <th mat-header-cell *matHeaderCellDef> Availability </th>
+        <td mat-cell *matCellDef="let element"> Yes </td>
+      </ng-container>
+
+      <ng-container matColumnDef="More Details">
+        <th mat-header-cell *matHeaderCellDef> View Details </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-raised-button (click)="navigateToReserveRoom(element)">Details</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </table>
+  </div>
+</section>
+
+<section class="container" style="padding-top: 10px" *ngFor="let item of availableAmenities">
+  <div class="container">
+    <br>
+    <h2 style="color: #000;">Apartment Amenities</h2><br>
+    <div class="row padding-bottom">
+      <div class="col-sm-4">
+        <div class="col-sm-12">
+          <h4 style="color: #000;">Unique features</h4><br>
+          <p> {{item.wifi}}</p>
+          <p> {{item.carbonMonoxideAlarm}}</p>
+          <br>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="col-sm-12">
+          <h4 style="color: #000;">Services</h4><br>
+          <p> {{item.washingMachine}}</p>
+          <p> {{item.iron}}</p><br>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="col-sm-12">
+          <h4 style="color: #000;">Outdoor Space</h4><br>
+          <p> Grill</p><br>
+        </div>
+      </div>
+    </div>
+    <div class="row padding-bottom">
+      <div class="col-sm-4">
+        <div class="col-sm-12">
+          <h4 style="color: #000;">Kitchen</h4><br>
+          <p> {{item.washingMachine}} </p>
+          <p> Disposal</p><br>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="col-sm-12">
+          <h4 style="color: #000;">Features</h4><br>
+          <p> {{item.hair}}</p>
+          <p>{{item.heating}}</p>
+          <p>{{item.hangers}}</p>
+          <br>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="col-sm-12">
+          <h4 style="color: #000;">Interior</h4><br>
+          <p>{{item.laptopSpace}}</p>
+          <p>{{item.fireExtin}}</p>
+          <p>{{item.firstAidKit}}</p>
+          <p>Storage space</p><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
