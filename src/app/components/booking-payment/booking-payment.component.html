@@ -1,0 +1,359 @@
+<div class="breadcrumb-section pt-0"
+     [ngStyle]="{'background-image': 'url(http://roomstoinn.com:9090/downloadFile/' + this.selectedPropertyDetails.propertyId + '/' + this.selectedPropertyDetails.masterImage + ')'}">
+  <img style="width: 100%" src="" class="bg-img blur-up lazyload" alt="">
+  <div class="breadcrumb-content">
+    <div style="display: inline-block">
+        <h2>review</h2>
+        <nav aria-label="breadcrumb" class="theme-breadcrumb">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a>Home</a></li>
+            <li class="breadcrumb-item"><a>hotels</a></li>
+            <li class="breadcrumb-item active"><a>review</a></li>
+          </ul>
+        </nav>
+    </div>
+  </div>
+</div>
+
+
+<section class="section-b-space bg-inner animated-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="summery-box">
+            <h2>payment option</h2>
+            <div class="review-section">
+                <div class="review_box shadow-none">
+                    <div class="flight_detail payment-gateway p-0">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card" >
+                                <div class="card-header" id="h_one">
+                                  <mat-accordion class="example-headers-align" multi>
+                                    <mat-expansion-panel>
+                                      <mat-expansion-panel-header>
+                                        <mat-radio-group name="payment" aria-label="Select an option">
+                                          <mat-radio-button value="1">debit card</mat-radio-button>
+                                        </mat-radio-group>
+                                      </mat-expansion-panel-header>
+                                      <div class="row p-0 m-0">
+                                        <div class="col-sm-12">
+                                      <mat-form-field class="align"appearance="outline">
+                                        <mat-label>Name On Card</mat-label>
+                                        <input matInput>
+                                      </mat-form-field>
+                                    </div>
+                                </div>
+                                      <div class="row p-0 m-0">
+                                          <div class="col-sm-12">
+                                      <mat-form-field class="align"appearance="outline">
+                                        <mat-label>Card Number</mat-label>
+                                        <input matInput style="display: inline-block; width: 65%;">
+                                        <img src="assets/images/creditcards.png" alt=""
+                                         style="float: right;" />
+                                      </mat-form-field>
+                                          </div>
+                                    </div>
+                                      <div class="row p-0 m-0">
+                                      <div class="col-sm-4 in-a">
+                                      <mat-form-field class="example-full-width" appearance="outline">
+                                        <mat-label>Month</mat-label>
+                                        <mat-select  placeholder="Month" name="month" >
+                                          <mat-option *ngFor="let month of creditCardMonths" [value]="month" >
+                                            {{month}}
+                                          </mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                    </div>
+                                      <div class="col-sm-4 in-a" >
+                                      <mat-form-field class="example-full-width" appearance="outline">
+                                        <mat-label>year</mat-label>
+                                        <mat-select  placeholder="Month" name="month" >
+                                          <mat-option *ngFor="let year of creditCardYear" [value]="year" >
+                                            {{year}}
+                                          </mat-option>
+                                        </mat-select>
+                                      </mat-form-field>
+                                      </div>
+                                    <div class="col-sm-4 in-a">
+                                      <mat-form-field class="align"appearance="outline">
+                                        <mat-label>Cvv</mat-label>
+                                        <input matInput style="display: inline-block; width: 70%;">
+                                        <img src="assets/images/cvv.png" alt=""
+                                         style="float: right;display: inline; width: 28px;" />
+                                      </mat-form-field>
+                                    </div>
+                                    </div>
+                                    <div class="row p-0 m-0">
+                                    <div class="col-sm-8"></div>
+                                    <div class="col-sm-4">
+                                      <button mat-raised-button class="mt-4" style="width: 100%; height: 45px;" (click)="doPayment()">Pay Now</button>
+                                    </div>
+                                    </div>
+                                    </mat-expansion-panel>
+                                  </mat-accordion>
+
+                                </div>
+
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="h_one">
+                                  <mat-accordion class="example-headers-align" multi>
+                                    <mat-expansion-panel>
+                                      <mat-expansion-panel-header>
+                                        <mat-radio-group name="payment" aria-label="Select an option">
+                                          <mat-radio-button value="1">Credit card</mat-radio-button>
+                                        </mat-radio-group>
+                                      </mat-expansion-panel-header>
+                                      <div class="row p-0 m-0">
+                                        <div class="col-sm-12">
+                                      <mat-form-field class="align"appearance="outline">
+                                        <mat-label>Name On Card</mat-label>
+                                        <input matInput>
+                                      </mat-form-field>
+                                    </div>
+                                </div>
+                                      <div class="row p-0 m-0">
+                                          <div class="col-sm-12">
+                                      <mat-form-field class="align"appearance="outline">
+                                        <mat-label>Card Number</mat-label>
+                                        <input matInput style="width: 65%;display: inline-block;">
+                                        <img src="assets/images/creditcards.png" alt=""
+                                         style="float: right;" />
+                                      </mat-form-field>
+                                          </div>
+                                    </div>
+                                      <div class="row p-0 m-0">
+                                      <div class="col-sm-4 in-a">
+                                      <mat-form-field class="example-full-width" appearance="outline">
+                                        <mat-label>Month</mat-label>
+                                        <!-- <mat-select  placeholder="Month" [(ngModel)]="selectedValue" name="month" >
+                                          <mat-option *ngFor="let month of months" [value]="month.value" >
+                                            {{month.viewValue}}
+                                          </mat-option>
+                                        </mat-select> -->
+                                        <input matInput>
+                                      </mat-form-field>
+                                    </div>
+                                      <div class="col-sm-4 in-a" >
+                                      <mat-form-field class="example-full-width" appearance="outline">
+                                        <mat-label>year</mat-label>
+                                        <!-- <mat-select  placeholder="Month" [(ngModel)]="selectedValue" name="month" >
+                                          <mat-option *ngFor="let month of months" [value]="month.value" >
+                                            {{month.viewValue}}
+                                          </mat-option>
+                                        </mat-select> -->
+                                        <input matInput>
+                                      </mat-form-field>
+                                      </div>
+                                    <div class="col-sm-4 in-a">
+                                        <mat-form-field class="align"appearance="outline">
+                                            <mat-label>Cvv</mat-label>
+                                            <input matInput style="display: inline-block; width: 70%;">
+                                            <img src="assets/images/cvv.png" alt=""
+                                             style="float: right;display: inline; width: 28px;" />
+                                          </mat-form-field>
+                                    </div>
+                                    </div>
+                                    <div class="row p-0 m-0">
+                                    <div class="col-sm-8"></div>
+                                    <div class="col-sm-4">
+                                      <button mat-raised-button class="mt-4" style="width: 100%; height: 45px;" (click)="doPayment()">Pay Now</button>
+                                    </div>
+                                    </div>
+                                    </mat-expansion-panel>
+                                  </mat-accordion>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="h_one">
+                                  <mat-accordion class="example-headers-align" multi>
+                                    <mat-expansion-panel>
+                                      <mat-expansion-panel-header>
+                                        <mat-radio-group name="payment" aria-label="Select an option">
+                                          <mat-radio-button value="1">Net Banking</mat-radio-button>
+                                        </mat-radio-group>
+                                      </mat-expansion-panel-header>
+                                      <div class="row p-0 m-0">
+                                        <div class="col-sm-12">
+                                        <mat-label>SELECT POPULAR BANK</mat-label>
+                                        </div>
+                                    </div>
+                                      <div class="row p-0 m-0">
+                                        <div class="col-sm-12">
+                                      <mat-radio-group name="payment" aria-label="Select an option">
+                                        <div class="col-sm-6 in-b">
+                                          <mat-radio-button value="1">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                          <mat-radio-button value="2">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                            <mat-radio-button value="3">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                            <mat-radio-button value="4">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                            <mat-radio-button value="5">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                            <mat-radio-button value="6">Net Banking</mat-radio-button>
+                                        </div>
+                                        </mat-radio-group>
+                                    </div>
+                                </div>
+                                      <div class="row p-0 m-0">
+                                          <div class="col-sm-12">
+                                      <mat-form-field class="align"appearance="outline">
+                                        <mat-label>Select Bank</mat-label>
+                                            <mat-select >
+                                              <mat-option value="option1">Option 1</mat-option>
+                                              <mat-option value="option2">Option 2</mat-option>
+                                            </mat-select>
+                                      </mat-form-field>
+                                          </div>
+                                    </div>
+
+                                    <div class="row p-0 m-0">
+                                    <div class="col-sm-8"></div>
+                                    <div class="col-sm-4">
+                                      <button mat-raised-button class="mt-4" style="width: 100%; height: 45px;" (click)="doPayment()">Pay Now</button>
+                                    </div>
+                                    </div>
+                                    </mat-expansion-panel>
+                                  </mat-accordion>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="h_one">
+                                  <mat-accordion class="example-headers-align" multi>
+                                    <mat-expansion-panel>
+                                      <mat-expansion-panel-header>
+                                        <mat-radio-group name="payment" aria-label="Select an option">
+                                          <mat-radio-button value="1">My Wallet</mat-radio-button>
+                                        </mat-radio-group>
+                                      </mat-expansion-panel-header>
+                                      <div class="row p-0 m-0">
+                                        <div class="col-sm-12">
+                                        <mat-label>SELECT YOUR WALLET</mat-label>
+                                        </div>
+                                    </div>
+                                      <div class="row p-0 m-0">
+                                        <div class="col-sm-12">
+                                      <mat-radio-group name="payment" aria-label="Select an option">
+                                        <div class="col-sm-6 in-b">
+                                          <mat-radio-button value="1">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                          <mat-radio-button value="2">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                            <mat-radio-button value="3">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                            <mat-radio-button value="4">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                            <mat-radio-button value="5">Net Banking</mat-radio-button>
+                                        </div>
+                                        <div class="col-sm-6 in-b">
+                                            <mat-radio-button value="6">Net Banking</mat-radio-button>
+                                        </div>
+                                        </mat-radio-group>
+                                    </div>
+                                </div>
+
+                                    <div class="row p-0 m-0">
+                                    <div class="col-sm-8"></div>
+                                    <div class="col-sm-4">
+                                      <button mat-raised-button class="mt-4" style="width: 100%; height: 45px;" (click)="doPayment()">Pay Now</button>
+                                    </div>
+                                    </div>
+                                    </mat-expansion-panel>
+                                  </mat-accordion>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="col-lg-5 booking-order" style="margin-left: 12px">
+        <div class="summery-box">
+          <div class="row col-sm-12">
+            <h2>booking summary</h2>
+          </div>
+
+          <div class="hotel-section">
+            <div class="hotel-img col-sm-4">
+              <img src="assets/images/hotel/room/1.jpg" style="width: 100%" class="blur-up lazyload" alt="">
+            </div>
+            <div class="hotel-detail col-sm-8">
+              <h6>{{selectedPropertyDetails.propertyName}}</h6>
+              <p>{{selectedPropertyDetails.address}}, {{selectedPropertyDetails.state}}, {{selectedPropertyDetails.country}}</p>
+            </div>
+          </div>
+
+          <div class="row summery-section">
+            <div class="box">
+              <div class="left " >
+                <div class="up ">
+                  <h6>check in</h6>
+                  <h5>{{selectedPropertyDetails.checkInDate}}</h5>
+                </div>
+              </div>
+              <div class="right">
+                <div class="up ">
+                  <h6>check out</h6>
+                  <h5>{{selectedPropertyDetails.checkOutDate}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="summery-section">
+            <h5 class="mb-0 ">{{selectedPropertyDetails.roomGuestNo}} guest, {{diffCheckInDate}} months</h5>
+            <a class="edit-cls" >edit</a>
+          </div>
+
+          <div class="summery-section">
+            <div class="payment-details">
+              <h5>payment details</h5>
+              <table>
+                <tbody>
+                <tr>
+                  <td>base price</td>
+                  <td>${{selectedPropertyDetails.roomRate}}</td>
+                </tr>
+                <tr>
+                  <td>promo discount</td>
+                  <td>- $0</td>
+                </tr>
+                <tr>
+                  <td>tax & service fees</td>
+                  <td>+ $0</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="summery-section">
+            <div class="payment-details">
+              <table>
+                <tbody>
+                <tr>
+                  <td>payable amount</td>
+                  <td class="amount">${{selectedPropertyDetails.roomRate}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+     </div>
+</section>
+

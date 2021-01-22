@@ -28,6 +28,9 @@ import { ImageSliderComponent } from './common/image-slider/image-slider.compone
 import {SlickCarouselModule} from 'ngx-slick-carousel';
 import { LoginComponent } from './components/authentication/login/login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {BookingPaymentComponent} from './components/booking-payment/booking-payment.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     SearchPropertyComponent,
     ReserveRoomComponent,
     ImageSliderComponent,
-    LoginComponent
+    LoginComponent,
+    BookingPaymentComponent
   ],
     imports: [
         CommonModule,
@@ -61,7 +65,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
         MatDialogModule,
         SlickCarouselModule,
         NgImageSliderModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatRadioModule,
+        MatExpansionModule
     ],
   providers: [
     // {provide: APP_BASE_HREF, useValue: '/search-room/'}

@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   BackEndUrl: `http://roomstoinn.com:9090/`,
-  adminPortalUrl: `http://localhost:5200/#/admin/dashboard/main`
+  adminPortalUrl: `http://localhost:5200/#/admin/dashboard/main`,
+  creditCardYear: new Date().getFullYear(),
+  creditCardMonth: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 };
 
 /*

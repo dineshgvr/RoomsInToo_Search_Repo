@@ -3,6 +3,7 @@ import {SearchHotelService} from '../../Services/search-hotel/search-hotel.servi
 import * as moment from 'moment';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-reserve-room',
@@ -13,7 +14,8 @@ export class ReserveRoomComponent implements OnInit {
   public selectedPropertyDetails: any;
   public diffCheckInDate: string;
   constructor(private searchHotelService: SearchHotelService,
-              private matSnackBar: MatSnackBar) {
+              private matSnackBar: MatSnackBar,
+              private readonly router: Router) {
     this.searchHotelService.selectedPropertyDetails$.subscribe((response: any) => {
     this.selectedPropertyDetails = response;
     const startDate = moment(response.checkInDate, "YYYY-MM-DD");
@@ -27,22 +29,6 @@ export class ReserveRoomComponent implements OnInit {
   }
 
   bookRoom(): void {
-    const bookRoomObj: any = {
-      roomPropId: this.selectedPropertyDetails.propertyId,
-      checkInDate: this.selectedPropertyDetails.checkInDate,
-      checkOutDate: this.selectedPropertyDetails.checkOutDate,
-      roomGuestNo: this.selectedPropertyDetails.roomGuestNo,
-      roomSize: this.selectedPropertyDetails.roomSize,
-      typeOfTenant: this.selectedPropertyDetails.typeOfTenant
-    };
-
-    this.searchHotelService.bookRoom(bookRoomObj).subscribe((response: any) => {
-      this.matSnackBar.open(response.Message, 'success', {
-        duration: 2000,
-        verticalPosition: 'top',
-        horizontalPosition: 'right',
-        panelClass: ['bg-green'],
-      });
-    });
+    this.router.navigate(['pay-room']);
   }
 }

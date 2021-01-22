@@ -18,6 +18,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   cursor: pointer;
 }
 
+
 /*.ng-image-slider-container .main {*/
 /*  display: none !important;*/
 /*}*/
+
+.mat-expansion-indicator{
+  display: none;
+}
+.mat-content{
+  overflow: inherit!important;
+}
