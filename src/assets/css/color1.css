@@ -679,15 +679,22 @@ header {
   width: 100%;
   z-index: 1; }
   header .menu {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0 auto;
+    /* display: -webkit-box; */
+    /* display: -ms-flexbox; */
+    /* display: flex; */
+    /* margin: 0 auto; */
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
     header .menu nav {
-      margin: 0 auto; }
+      /* margin: 0 auto;  */
+      float:right;
+        }
+        .brand-logo{
+          display:inline-block;
+          padding:10px;
+        }
+
     header .menu .coupon-box {
       background-color: white;
       border-radius: 4px;
@@ -15393,7 +15400,7 @@ header {
       display: inline-block;
       list-style: none;
       margin: 0;
-      padding: 0;
+      padding: 10px;
       line-height: normal;
       direction: ltr;
       text-align: left;
@@ -21333,7 +21340,7 @@ body.dark {
   .cab-section.flight-section .cab-content {
     padding-top: 90px; }
   .home_section .home {
-    height: 70vh; }
+    height: 85vh; }
     .home_section .home .home-content {
       height: 70vh;
       padding-top: 73px; }
@@ -22139,7 +22146,9 @@ body.dark {
       .breadcrumb-section.breadcrumb-cum-header .breadcrumb-content {
         height: 300px; }
   .home_section .home .home-content {
-    padding-top: 60px; }
+    padding-top: 95px; }
+     .home_section .home .home-content h5{
+    margin-top: 0px!important; }
     .home_section .home .home-content h5 {
       margin-bottom: 2px;
       letter-spacing: 0.01em; }

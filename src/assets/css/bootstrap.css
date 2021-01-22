@@ -27,9 +27,9 @@
   .container, .container-sm {
     max-width: 540px; } }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .container, .container-sm, .container-md {
-    max-width: 720px; } }
+    max-width: 1020px; } } */
 
 @media (min-width: 992px) {
   .container, .container-sm, .container-md, .container-lg {
@@ -7603,7 +7603,9 @@ progress {
 
 .img-fluid {
   max-width: 100%;
-  height: auto; }
+  height: auto; 
+  width:100%;
+}
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -7643,7 +7645,7 @@ progress {
 
 @media (min-width: 768px) {
   .container, .container-sm, .container-md {
-    max-width: 720px; } }
+    max-width: 1020px; } }
 
 @media (min-width: 992px) {
   .container, .container-sm, .container-md, .container-lg {
