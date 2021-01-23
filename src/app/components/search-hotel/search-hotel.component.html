@@ -2,7 +2,7 @@
 <section class="home_section hotel_layout slide-1 p-0">
   <div>
     <div class="home">
-      <img src="assets/images/hotel-bg.jpg" class="img-fluid blur-up lazyload bg-img" alt="">
+      <img src="assets/images/hotel-bg.jpg" class="img-fluid full-height blur-up lazyload bg-img" alt="">
       <div class="home-content">
         <div>
           <h1>RoomsToInn</h1>
@@ -17,18 +17,18 @@
 <!-- home section end -->
 
 <div class="search-section" [formGroup]="searchForm">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
-      <div class="">
+      <div class="col-xl-12 ">
         <div class="search-panel" id="searchBar">
           <div class="search-section shadow">
             <div class="search-box">
-              <div class="left-part row">
-                <div class="col-xxl-2 col-xl-2 col-lg-6 col-md-6 col-sm-12 search-body title-hotel">
+              <div class="left-part">
+                <div class="search-body title-hotel">
                   <h6>hotel</h6>
                   <input type="text" name="text" placeholder="North Carolina" class="form-control ">
                 </div>
-                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 search-body">
+                <div class="search-body">
                   <h6>check in</h6>
                   <mat-form-field class="example-full-width" appearance="fill">
                     <input matInput [matDatepicker]="picker" formControlName="checkInDate">
@@ -38,7 +38,7 @@
                     <mat-datepicker #picker></mat-datepicker>
                   </mat-form-field>
                 </div>
-                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-12 search-body">
+                <div class="search-body">
                   <h6>check out</h6>
                   <mat-form-field class="example-full-width" appearance="fill">
                     <input matInput [matDatepicker]="picker1" formControlName="checkOutDate">
@@ -48,9 +48,9 @@
                     <mat-datepicker #picker1></mat-datepicker>
                   </mat-form-field>
                 </div>
-                <div class="col-xxl-2 col-xl-2 col-lg-6 col-md-6 col-sm-12 search-body">
+                <div class="search-body">
                   <h6>Room Type</h6>
-                  <mat-form-field appearance="fill">
+                  <mat-form-field class="example-full-width" appearance="fill">
                     <mat-select name="type" placeholder="Select" formControlName="typeOfTenant">
                       <mat-option *ngFor="let type of ['private', 'shared']" [value]="type">
                         {{type}}
@@ -58,7 +58,7 @@
                     </mat-select>
                   </mat-form-field>
                 </div>
-                <div class="col-xxl-2 col-xl-2 col-lg-6 col-md-6 col-sm-12 btn-search">
+                <div class="search-body btn-search">
                   <div class="right-part" (click)="onSearchHotel()">
                     <a class="btn btn-solid color1">search</a>
                   </div>

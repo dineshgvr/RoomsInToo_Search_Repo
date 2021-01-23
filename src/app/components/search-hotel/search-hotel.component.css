@@ -24,3 +24,18 @@
 .search-body {
   padding: 20px 10px 20px !important
 }
+
+.right-part{
+  margin: 0px 25px 0px 0px!important;
+}
+
+@media(max-width:660px){
+  .full-height{
+    height:500px;
+  }
+}
+@media(max-width:460px){
+.example-full-width{
+  width:85%;
+}
+}

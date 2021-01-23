@@ -15396,6 +15396,7 @@ header {
   z-index: 3; }
   header .main-navbar {
     text-align: center; }
+    @media (min-width: 768px) {
     header .main-navbar .nav-menu {
       display: inline-block;
       list-style: none;
@@ -15424,6 +15425,7 @@ header {
           letter-spacing: 0.07em;
           position: relative;
           border-radius: 4px; }
+        }
         header .main-navbar .nav-menu > li .nav-submenu {
           position: absolute;
           left: 0;
@@ -15536,7 +15538,7 @@ header {
   header.overlay-white {
     background-color: rgba(255, 255, 255, 0.08); }
 
-.toggle-nav {
+/* .toggle-nav {
   position: relative;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -15546,7 +15548,7 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer; }
+  cursor: pointer; } */
   .toggle-nav i {
     font-size: 24px;
     color: white; }
@@ -15633,7 +15635,7 @@ header {
   header .main-navbar .nav-menu > li {
     margin-right: 8px; } }
 
-@media (max-width: 1199px) {
+@media (max-width: 767px) {
   header .main-navbar .nav-menu {
     position: fixed;
     background-color: #fff;
@@ -15672,7 +15674,7 @@ header {
                 align-items: center; }
     header .main-navbar .nav-menu > li {
       display: block;
-      float: none;
+      /* float: none; */
       width: 100%;
       padding: 0; }
       header .main-navbar .nav-menu > li a {
@@ -19752,9 +19754,7 @@ body.dark {
     display: none; }
     .menu-overlay.show {
       display: block; }
-  .toggle-nav {
-    padding-top: 25px;
-    padding-bottom: 25px; }
+  
   .breadcrumb-section {
     height: 430px; }
     .breadcrumb-section .breadcrumb-content {
@@ -21268,6 +21268,9 @@ body.dark {
     height: 24px; } }
 
 @media (max-width: 767px) {
+  .toggle-nav {
+    padding-top: 25px;
+    padding-bottom: 25px; }
   section,
   .section-t-space {
     padding-top: 50px; }
