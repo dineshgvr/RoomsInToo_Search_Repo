@@ -42,8 +42,11 @@ export class SearchHotelComponent {
     // tslint:disable-next-line:max-line-length
     const storeSelectedProperty: object = { hotelList: items, searchParams: this.searchForm.value};
     this.searchHotelService.setSearchHotelData(storeSelectedProperty);
-    // this.searchHotelService.selectedHotelForStage2.next();
-    this.router.navigate(['/property/' + items[0].propertyId]);
+    this.router.navigate(['/property/' + this.formUrl(items)]);
+  }
+
+  formUrl(items: any): any{
+    return items.length > 0 ? items[0].propertyId : items.propertyId;
   }
 
   getImage(pId: string, fileName: string): any {

@@ -30,11 +30,19 @@ export class SearchPropertyComponent implements OnInit {
     this.searchHotelService.selectedHotelForStage2Obs$.subscribe((response: any) => {
       if (!response) {
         const searchHotelSearch: any = JSON.parse(localStorage.getItem('searchHotelData'));
-        this.selectedHotelInfo = searchHotelSearch.hotelList;
+        if (typeof (searchHotelSearch.hotelList) === 'object' && searchHotelSearch.hotelList.length == undefined) {
+          this.selectedHotelInfo = [searchHotelSearch.hotelList];
+        } else {
+          this.selectedHotelInfo = searchHotelSearch.hotelList;
+        }
         this.searchParams = searchHotelSearch.searchParams;
         this.selectedRoomType = searchHotelSearch.searchParams.typeOfTenant;
       } else {
-        this.selectedHotelInfo = response.hotelList;
+        if (typeof response.hotelList === 'object') {
+          this.selectedHotelInfo = [response.hotelList];
+        } else {
+          this.selectedHotelInfo = response.hotelList;
+        }
         this.searchParams = response.searchParams;
         this.selectedRoomType = response.searchParams.typeOfTenant;
       }
