@@ -1,9 +1,9 @@
 <!--{{this.selectedPropertyDetails.propertyId}} {{selectedPropertyDetails.masterImage}}-->
 <!--[ngStyle]="{'background-image': 'url(http://roomstoinn.com:9090/downloadFile/' + this.selectedPropertyDetails.propertyId + '/' + this.selectedPropertyDetails.masterImage + ')'}"-->
-<div class="breadcrumb-section pt-0">
-  <div>
+<div class="breadcrumb-section pt-0" [ngStyle]="{'background-image': 'url(http://roomstoinn.com:9090/downloadFile/' + this.selectedPropertyDetails.propertyId + '/' + this.selectedPropertyDetails.masterImage + ')'}">
+  <!-- <div>
     <img style="width: -webkit-fill-available" src="http://roomstoinn.com:9090/downloadFile/{{this.selectedPropertyDetails.propertyId}}/{{this.selectedPropertyDetails.masterImage}}" class="bg-img bg-bottom img-fluid blur-up lazyload" alt="">
-  </div>
+  </div> -->
   <div class="breadcrumb-content">
     <div style="display: inline-block">
         <h2>review</h2>
