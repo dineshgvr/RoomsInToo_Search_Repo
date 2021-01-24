@@ -96,7 +96,7 @@ export class SearchPropertyComponent implements OnInit {
   private navigateToReserveRoom(selectedPropertyDetail): void {
     // tslint:disable-next-line:max-line-length
     this.searchHotelService.selectedPropertyDetails.next(selectedPropertyDetail);
-    this.router.navigate(['reverse-room']);
+    this.router.navigate(['reserve']);
   }
 
   getImage(pId: string, fileName: string): any {

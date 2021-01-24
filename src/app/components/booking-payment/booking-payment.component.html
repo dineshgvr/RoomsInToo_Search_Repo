@@ -125,26 +125,24 @@
                                     </div>
                                       <div class="row p-0 m-0">
                                       <div class="col-sm-4 in-a">
-                                      <mat-form-field class="example-full-width" appearance="outline">
-                                        <mat-label>Month</mat-label>
-                                        <!-- <mat-select  placeholder="Month" [(ngModel)]="selectedValue" name="month" >
-                                          <mat-option *ngFor="let month of months" [value]="month.value" >
-                                            {{month.viewValue}}
-                                          </mat-option>
-                                        </mat-select> -->
-                                        <input matInput>
-                                      </mat-form-field>
+                                        <mat-form-field class="example-full-width" appearance="outline">
+                                          <mat-label>Month</mat-label>
+                                          <mat-select  placeholder="Month" name="month" >
+                                            <mat-option *ngFor="let month of creditCardMonths" [value]="month" >
+                                              {{month}}
+                                            </mat-option>
+                                          </mat-select>
+                                        </mat-form-field>
                                     </div>
                                       <div class="col-sm-4 in-a" >
-                                      <mat-form-field class="example-full-width" appearance="outline">
-                                        <mat-label>year</mat-label>
-                                        <!-- <mat-select  placeholder="Month" [(ngModel)]="selectedValue" name="month" >
-                                          <mat-option *ngFor="let month of months" [value]="month.value" >
-                                            {{month.viewValue}}
-                                          </mat-option>
-                                        </mat-select> -->
-                                        <input matInput>
-                                      </mat-form-field>
+                                        <mat-form-field class="example-full-width" appearance="outline">
+                                          <mat-label>year</mat-label>
+                                          <mat-select  placeholder="Month" name="month" >
+                                            <mat-option *ngFor="let year of creditCardYear" [value]="year" >
+                                              {{year}}
+                                            </mat-option>
+                                          </mat-select>
+                                        </mat-form-field>
                                       </div>
                                     <div class="col-sm-4 in-a">
                                         <mat-form-field class="align"appearance="outline">

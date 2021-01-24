@@ -31,6 +31,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {BookingPaymentComponent} from './components/booking-payment/booking-payment.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {ReserveroomComponent} from './components/reserveroom/reserveroom.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     FooterComponent,
     SearchPropertyComponent,
     ReserveRoomComponent,
+    ReserveroomComponent,
     ImageSliderComponent,
     LoginComponent,
     BookingPaymentComponent

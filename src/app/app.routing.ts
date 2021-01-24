@@ -5,13 +5,15 @@ import {SearchPropertyComponent} from './components/search-property/search-prope
 import {ReserveRoomComponent} from './components/reserve-room/reserve-room.component';
 import {LoginComponent} from './components/authentication/login/login.component';
 import {BookingPaymentComponent} from './components/booking-payment/booking-payment.component';
+import {ReserveroomComponent} from './components/reserveroom/reserveroom.component';
 
 const routes: Routes = [
   { path: '', component: SearchHotelComponent},
   { path: 'login', component: LoginComponent },
   { path: 'property/:pId', component: SearchPropertyComponent},
   { path: 'reverse-room', component: ReserveRoomComponent},
-  { path: 'pay-room', component: BookingPaymentComponent}
+  { path: 'pay-room', component: BookingPaymentComponent},
+  { path: 'reserve', component: ReserveroomComponent}
 ];
 
 @NgModule({
