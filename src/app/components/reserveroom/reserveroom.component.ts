@@ -21,8 +21,7 @@ export class ReserveroomComponent implements OnInit {
     this.searchHotelService.selectedPropertyDetails$.subscribe((response: any) => {
       this.roomRate = response.roomRate;
       this.roomSize = response.roomSize;
-      debugger;
-      this.roomName = response;
+      this.roomName = response.propertyName;
     });
     this.searchHotelService.selectedHotelForStage2Obs$.subscribe((response: any) => {
       if (!response) {
