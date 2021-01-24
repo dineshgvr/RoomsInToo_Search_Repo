@@ -14,12 +14,15 @@ export class ReserveroomComponent implements OnInit {
   public selectedRoomType: string;
   public roomSize: string;
   public roomRate: string;
+  public roomName:string;
 
   constructor(private readonly searchHotelService: SearchHotelService,
               private router: Router) {
     this.searchHotelService.selectedPropertyDetails$.subscribe((response: any) => {
       this.roomRate = response.roomRate;
       this.roomSize = response.roomSize;
+      debugger;
+      this.roomName = response;
     });
     this.searchHotelService.selectedHotelForStage2Obs$.subscribe((response: any) => {
       if (!response) {
