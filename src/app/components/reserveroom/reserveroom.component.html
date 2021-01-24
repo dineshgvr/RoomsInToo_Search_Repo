@@ -4,7 +4,7 @@
         <div class="login-panel panel panel-default">
  <div class class="col-md-9"  >
  <div class="text-align" style="margin-top:3px">
-        <h3>{{selectedRoomType | titlecase}}</h3>
+        <h3>{{roomName | titlecase}}|{{selectedRoomType | titlecase}}</h3>
 		<h5>${{roomRate ? roomRate : '0'}} | {{roomSize ? roomSize : '0'}} Sq Ft</h5>
 </div>
 </div>
@@ -36,16 +36,16 @@
 	<div id="inlineDlfWrapper" class="inlineDlfWrapper">
 		<div class="contactLeadWrapper " id="contactLeadForm">
 			<input id="DlfConfiguration" type="hidden" value="{&quot;DynamicLeadFormId&quot;:0,&quot;DynamicLeadFormType&quot;:0,&quot;ListingId&quot;:0,&quot;HasContactVia&quot;:false,&quot;HasMaxRent&quot;:false,&quot;HasBedsBaths&quot;:false,&quot;HasReasonForMoving&quot;:false,&quot;IsPhoneRequired&quot;:false,&quot;IsContactViaRequired&quot;:false,&quot;IsMaxRentRequired&quot;:false,&quot;IsBedsRequired&quot;:false,&quot;IsReasonForMovingRequired&quot;:false,&quot;HasOnlineScheduling&quot;:false,&quot;OnlineSchedulingProviderType&quot;:0}">
-      <header class="property-title-header" style="height:30%;font-size:18px;position:relative;">
+      <header class="property-title-header"  style="background-color: #20c997;height:30%;font-size:18px;position:relative;">
 					<span id="ctn" class="contactPhone">Contact Property</span><br>
 					<span id="ctn" class="contactPhone"><mat-icon>phone</mat-icon> 630-517-9382</span>
 			</header>
-      <header class="property-title-headers">
-        <h5>
+      <header class="property-title-headers" style="top:5px;color:white;background-color: #ef3f3e;" >
+        
           <span id="ctn" class="contactPhone">
-            <button mat-raised-button color="accent" (click)="navigateToReserveRoom()">Book Now</button>
+            <button mat-button color="#ef3f3e" (click)="navigateToReserveRoom()">Book Now</button>
           </span>
-        </h5>
+        
       </header>
 			<header class="property-title-headers">
 				<h5>
