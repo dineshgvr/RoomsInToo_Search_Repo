@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {environment} from '../../../environments/environment';
+import { Router } from '@angular/router';
 
 interface month {
   value: string;
@@ -22,7 +23,8 @@ export class BookingPaymentComponent implements OnInit {
   public creditCardYear: number[] = [];
   public creditCardMonths: string[] = [...environment.creditCardMonth];
   constructor(private searchHotelService: SearchHotelService,
-              private matSnackBar: MatSnackBar) {
+              private matSnackBar: MatSnackBar,
+              private readonly router: Router) {
     for (let i = 0; i < 50; i++) {
       this.creditCardYear.push(environment.creditCardYear + i);
     }
@@ -70,5 +72,9 @@ export class BookingPaymentComponent implements OnInit {
     {value: 'n-10', viewValue: 'November'},
     {value: 'm-11', viewValue: 'December'}
   ];
+  bookSuccess(): void {
+    this.router.navigate(['success']);
+  }
+
 }
 

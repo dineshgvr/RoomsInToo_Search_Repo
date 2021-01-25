@@ -32,6 +32,7 @@ import {BookingPaymentComponent} from './components/booking-payment/booking-paym
 import {MatRadioModule} from '@angular/material/radio';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {ReserveroomComponent} from './components/reserveroom/reserveroom.component';
+import { BookingSuccessComponent } from './components/booking-success/booking-success.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {ReserveroomComponent} from './components/reserveroom/reserveroom.compone
     ReserveroomComponent,
     ImageSliderComponent,
     LoginComponent,
-    BookingPaymentComponent
+    BookingPaymentComponent,
+    BookingSuccessComponent
   ],
     imports: [
         CommonModule,

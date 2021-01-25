@@ -95,7 +95,7 @@
     <div class="row">
       <div class="slide-3 col-sm-4">
         <div *ngFor="let item of searchHotelList; let i = index" >
-          <div *ngIf="i != 0; else elseBlock"  style="flex-basis: 30%; cursor: pointer">
+          <div *ngIf="i != 0; else elseBlock"  >
             <div *ngIf="item.propertyId != searchHotelList[i - 1].propertyId">
               <div class="special-box p-0" (click)="navigateToSearchProperty(item)">
                 <div class="special-img" style="padding-right: 10px;">
@@ -130,7 +130,7 @@
             </div>
           </div>
           <ng-template #elseBlock>
-            <div style="flex-basis: 30%; cursor: pointer" class="special-box p-0" (click)="navigateToSearchProperty(searchHotelList)">
+            <div   class="special-box p-0" (click)="navigateToSearchProperty(searchHotelList)">
               <div class="special-img" style="padding-right: 10px;">
                 <a>
                   <img src="http://roomstoinn.com:9090/downloadFile/{{item.propertyId}}/{{item.masterImage}}" class="img-fluid blur-up lazyload bg-img"

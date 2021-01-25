@@ -6,6 +6,7 @@ import {ReserveRoomComponent} from './components/reserve-room/reserve-room.compo
 import {LoginComponent} from './components/authentication/login/login.component';
 import {BookingPaymentComponent} from './components/booking-payment/booking-payment.component';
 import {ReserveroomComponent} from './components/reserveroom/reserveroom.component';
+import { BookingSuccessComponent } from './components/booking-success/booking-success.component';
 
 const routes: Routes = [
   { path: '', component: SearchHotelComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'property/:pId', component: SearchPropertyComponent},
   { path: 'reverse-room', component: ReserveRoomComponent},
   { path: 'pay-room', component: BookingPaymentComponent},
-  { path: 'reserve', component: ReserveroomComponent}
+  { path: 'reserve', component: ReserveroomComponent},
+  { path: 'success', component: BookingSuccessComponent}
 ];
 
 @NgModule({
