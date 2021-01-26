@@ -31,4 +31,7 @@ export class ReserveRoomComponent implements OnInit {
   bookRoom(): void {
     this.router.navigate(['pay-room']);
   }
+
+ 
+
 }

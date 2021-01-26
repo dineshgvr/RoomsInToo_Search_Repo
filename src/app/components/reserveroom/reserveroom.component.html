@@ -1,14 +1,46 @@
+<section class="hotel-single-section pt-0">
+	<img style="width: -webkit-fill-available" src="http://roomstoinn.com:9090/downloadFile/{{this.selectedHotelInfo[0].propertyId}}/{{this.selectedHotelInfo[0].masterImage}}" class="bg-img bg-bottom  blur-up lazyload" alt="">
+	<div class="hotel-title-section">
+	  <div class="container">
+		<div class="row">
+		  <div class="col-12">
+			<div class="hotel-name">
+			  <div class="left-part">
+				<div class="top">
+				  <h2>{{roomName | titlecase}}|{{selectedRoomType | titlecase}}</h2>
+				  <div class="rating">
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="fas fa-star"></i>
+					<i class="far fa-star"></i>
+				  </div>
+				</div>
+				<p>${{roomRate ? roomRate : '0'}} | {{roomSize ? roomSize : '0'}} Sq Ft</p>
+			  </div>
+			  <div class="right-part">
+  <!--              <h2 class="price">${{this.selectedHotelInfo[0].room[0].roomRate}} <span>/ per night</span></h2>-->
+  <!--              <a href="hotel-booking.html" class="btn btn-rounded btn-sm color1">book this now</a>-->
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+
 <section>
    <div class="row" style="margin:0;">
     <div class class="col-md-9"  >
         <div class="login-panel panel panel-default">
- <div class class="col-md-9"  >
+ <!-- <div class class="col-md-9"  >
  <div class="text-align" style="margin-top:3px">
         <h3>{{roomName | titlecase}}|{{selectedRoomType | titlecase}}</h3>
 		<h5>${{roomRate ? roomRate : '0'}} | {{roomSize ? roomSize : '0'}} Sq Ft</h5>
 </div>
 </div>
-<hr>
+<hr> -->
 <div class="panel-body">
   <div class="image-slider-container">
     <ng-image-slider #nav
@@ -40,10 +72,10 @@
 					<span id="ctn" class="contactPhone">Contact Property</span><br>
 					<span id="ctn" class="contactPhone"><mat-icon>phone</mat-icon> 630-517-9382</span>
 			</header>
-      <header class="property-title-headers" style="top:5px;color:white;background-color: #ef3f3e;" >
+      <header class="property-title-headers" style="top:5px;color:white;background-color:whitesmoke;" >
 
           <span id="ctn" class="contactPhone">
-            <button mat-button color="#ef3f3e" (click)="navigateToReserveRoom()">Book Now</button>
+            <button mat-raised-button style="background-color:#ef3f3e;color:white;" (click)="navigateToReserveRoom()">Book Now</button>
           </span>
 
       </header>
