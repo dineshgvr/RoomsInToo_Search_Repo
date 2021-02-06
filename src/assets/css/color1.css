@@ -1824,6 +1824,8 @@ section .black-layer {
           text-transform: capitalize;
           font-weight: 800;
           margin-bottom: -8px; }
+
+
         .search-section .search-box .left-part .search-body .form-control {
           border: none;
           padding: 0;
@@ -1833,6 +1835,7 @@ section .black-layer {
           text-transform: capitalize;
           font-weight: 800;
           margin-bottom: -8px; }
+          
         .search-section .search-box .left-part .search-body ::-webkit-input-placeholder {
           font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1920 - 320)));
           color: black;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import * as moment from 'moment';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {SearchHotelService} from '../../Services/search-hotel/search-hotel.service';

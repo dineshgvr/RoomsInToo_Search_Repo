@@ -19,34 +19,47 @@
 <div class="search-section" [formGroup]="searchForm">
   <div class="container">
     <div class="row">
-      <div class="col-xl-12 ">
+      <div class="col-xl-10 offset-xl-1">
         <div class="search-panel" id="searchBar">
           <div class="search-section shadow">
             <div class="search-box">
               <div class="left-part">
-                <div class="search-body title-hotel">
-                  <h6>hotel</h6>
-                  <input type="text" name="text" placeholder="North Carolina" class="form-control ">
+                <div class="search-body title-hotel" style="padding-top: 12px !important;">
+                  <div>
+                    <h6>hotel</h6>
+                  </div>
+                  <div style="padding-top: 12px">
+                    <input type="text" name="text" placeholder="North Carolina" class="form-control">
+                  </div>
                 </div>
                 <div class="search-body">
-                  <h6>check in</h6>
-                  <mat-form-field class="example-full-width" appearance="fill">
-                    <input matInput [matDatepicker]="picker" formControlName="checkInDate">
-                    <mat-datepicker-toggle matSuffix [for]="picker">
-                      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                    </mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                  </mat-form-field>
+                  <div>
+                    <div>
+                      <h6>check in</h6>
+                    </div>
+                    <div>
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <input matInput class="form-control" [matDatepicker]="picker" formControlName="checkInDate">
+                        <mat-datepicker-toggle matSuffix [for]="picker">
+                          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+                    </div>
+                  </div>
                 </div>
                 <div class="search-body">
                   <h6>check out</h6>
-                  <mat-form-field class="example-full-width" appearance="fill">
-                    <input matInput [matDatepicker]="picker1" formControlName="checkOutDate">
-                    <mat-datepicker-toggle matSuffix [for]="picker1">
-                      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                    </mat-datepicker-toggle>
-                    <mat-datepicker #picker1></mat-datepicker>
-                  </mat-form-field>
+                  <div>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <input matInput id="datepicker" class="form-control" [matDatepicker]="picker1" formControlName="checkOutDate">
+                      <mat-datepicker-toggle matSuffix [for]="picker1">
+                        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                      </mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                 
                 </div>
                 <div class="search-body">
                   <h6>Room Type</h6>

@@ -6,6 +6,14 @@
   position: absolute;
 }
 
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0px 10px 10px 0px !important;
+  margin: -4px !important;
+}
+::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0px;
+}
+
 .header-right li a {
   display: block;
   color: white;
@@ -37,5 +45,7 @@
 @media(max-width:460px){
 .example-full-width{
   width:85%;
-}
-}
+} 
+ }
+
+
